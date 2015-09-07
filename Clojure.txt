@@ -1,0 +1,133 @@
+
+
+
+
+Today is September 2nd 12:00 am
+
+I can't sleep... so i'm going through some closure stuff..
+
+Different types of collections in closure
+
+1. List
+ex:  '(:a :b :c)
+
+This is a list with three keywords. (symbols in ruby  :) )
+special properties of a list...
+You can't access an index directly you have to do so using things like this
+
+(first '(:a :b :c))
+That would return :a
+
+Or you can return b by doing this
+
+(first (rest '(:a :b :c)))
+
+This will return :b... but wwhy
+
+Its because you call the rest operation which returns everything but the first
+item in the list. You then pass that new value in and this time use the first
+operation for the list :b :c... it will pull :b
+
+
+2. Vector 
+ex: [:a :b :c]
+
+This is basically what I think of as an array. You can grab values directly
+just like in an array... you just specify the index... 
+
+(nth [:a :b :c] 1)
+
+This will return :b .. remember all  vectors are 0 based
+
+You can also call first, last, and rest operations
+
+3. Maps
+ex: {:a 'letter A' :b 'letter B' :c 'letter cd'}
+
+This is a map... or hash in ruby or dictionary in python or object in javascript
+
+It consists of a property and a value or key and value pairs
+
+In this case the key is a keyword and the value is a string
+
+You can get values by using the get operation like so
+
+
+(get {:a 'letter a' :b 'letter b' :c 'letter c'} :b)
+
+Or you can use the key like so
+
+(:b {:a 'letter a' :b 'letter b' :c 'letter c'})
+
+
+You can view all the keys by using the keys operation
+
+(keys {:a 'letter a' :b 'letter b' :c 'letter c'})
+
+
+
+
+
+
+
+
+
+Today is August 28th 2015
+
+10:44pm -
+  Been running through some python tutorials on codecademy. Mostly just review
+of the language syntax. Ran into something interesting.
+
+###Strings
+So there are methods you can apply to a string like len()... but that's
+interesting is you can apply that to other data types... you use it like so
+
+len("charlie")
+
+It would output the length
+
+You also have methods like upper and lower.. .these belong to the String class.
+You would call them like so
+
+"Delta".upper()
+"Echo".lower()
+
+###String Formatting with %
+
+The % operate after a string is used to combine a string with variables. The %
+operator will replace a %s in the string with the string variable that comes
+after it... FOr example
+
+string_1 = "Camelot"
+string_2 = "place"
+
+print "Let's not go to %s. 'Tis a silly %s." % (string_1, string_2)
+So this string would print as follows
+
+Let's not go to Camelot. Tis a silly place.
+
+
+
+### Functions
+
+This is something I always mix up terminology on. 
+A parameter is like (n) where n would be the paramter of the function definition
+An argument is the value of an argument or put another way
+A paramter acts as a variable name for a passed in argument
+
+
+Functions take arguments but the placeholder in the function declaration or
+definition is a paramter
+
+
+#August 28th 2015 - 1:13 PM
+
+#Lists
+
+Some intere
+
+
+
+
+
+Whoa... that's cool
