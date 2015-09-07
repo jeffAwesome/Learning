@@ -231,9 +231,8 @@ So this does actually explain why (seq [:3]) would return truthy since i'm
 assuming anything not nil in this instance would not be falsy.
 
 
-SideNote:
-
-I was reading through more of Clojure Living and so I was curious about
+##SideNote:
+> I was reading through more of Clojure Living and so I was curious about
 something. (seq []) returns a nil, but (seq [:1 :2 :3]) returns the sequence not
 true. Well that's all solved by using the not function. In Clojure Living it
 says this.
