@@ -5,6 +5,18 @@ think my biggest issue is I like to kind of know the deeper, but I also think
 going through each example and then writing a bit about it is going to help me
 fully grasp the concepts.
 
+Oh and quick note... I forgot about these, but where I'm at in the book they
+mention sets. Well I completely forgot what a set was... on the clojure site it
+mentions this
+
+http://clojure.org/data_structures#Data Structures-Sets
+"Sets are collections of unique values."
+
+Ex: ({:a :b :c :d})
+Notes this map is using unique keywords in each index.
+
+
+
 September 7th 1:53pm
 Looking at collection tests. Again I am working through the Living Clojure book. 
 
