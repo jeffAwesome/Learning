@@ -211,7 +211,8 @@ This would return false... so seq [:3] must return true.. and the not would
 negate that, so we'd get false back... but anyway lets dig into what seq is.
 
 
-Abstractions and seq
+##Abstractions and seq
+
 In clojure there are the collection and sequence abstractions. Collections are a
 collection of elements lik in a vector, a map, or a list. These all share
 immutable data structure. The collections abstractions share methods like count,
