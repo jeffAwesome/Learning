@@ -1,3 +1,100 @@
+September 7th 2:38pm
+
+I should probably move faster through this book. I'm still on chapter 2 :). I
+think my biggest issue is I like to kind of know the deeper, but I also think
+going through each example and then writing a bit about it is going to help me
+fully grasp the concepts.
+
+September 7th 1:53pm
+Looking at collection tests. Again I am working through the Living Clojure book. 
+
+One of the first examples I am given is the every? function. It looks like it
+takes two arguments. It takes a predicate(?) to test and the collection.
+
+So it looks like this
+
+Ex: (every? odd? [1 1 1])
+Return: true
+
+This checks each value in the vector. If the predicate(?) test returns true then
+the function returns true. If any of the items in the collection don't return
+true... the function returns false
+
+So again if we check in the Living Clojure book they answer what a predicate is. 
+
+"A predicate is just a function that returns a value used in a logic test."
+
+So i'm thinking that odd? is a function, a built in function but that probably
+means we can use our own functions to run tests. 
+
+Because I come from javascript filter comes to mind. For instance in
+javascript we could do something like this for an array.
+
+[1,2,3,4].filter( value => { return value % 2 !== 0; })
+
+Its slightly different because the filter only returns the items where this is
+true in a new array... and not returning a value but we could do that like so
+
+So javascript actually has a built in method called every and it does pretty
+much exactly what our clojure script is doing but were using our own lamdas
+(anonymous functions)
+
+It would look like this
+
+[1 1 1].every(item => item % 2 !== 0);
+
+This will return true, anyway using javascript always helps me understanding
+other concepts in other languages. Sorry for this digression it just helps me
+understand. 
+
+
+Back to Clojure
+We can also write our own predictes (functions that return true or false in a
+logic test )
+
+ex: (defn isThisOdd? [x] (not= (rem [x] 2) 0))
+
+I tried to get this to work, the method is created but when I pass a vector into
+it... i just get an error
+
+ClassCastException clojure.lang.PersistentVector cannot be cast to
+java.lang.Number  clojure.lang.Numbers.remainder (Numbers.java:173)
+
+Which is strange because I thought the every? function didn't pass the vector
+but I think that is what is happening. I'll need to look more into it...
+
+But anyway the idea is clear you can pass in functions in this case they're
+predicates that return a boolean value.
+
+Of course every? isn't the only "iterable" (?) (didn't see this word used but it
+makes sense to me.) function. 
+
+
+# not-any?
+Another one checking for false is not-any?. It can be used like so
+
+Ex: (not-any? #(= % :drinkme) [:drinkme :poison])
+Returns: false
+
+So one quick note... this is an example from the living clojure book. It
+confused me a t first because what is this new syntax... 
+
+Well it turns out its shorthand for lamda functions.
+
+You could write things in the previous fashion this is just another version.
+
+There is also another function
+
+# some
+
+Another function does something slightly different, it returns the first logical
+true value of the predicate, and returns nil if there isn't a true value.
+
+(some #(> % 3) [1 2 3 4 5])
+
+This will return true because well 4 > 3.
+
+
 September 7th 1:19pm
 
 I took a few days off from playing with clojure. I dug into some javascript
