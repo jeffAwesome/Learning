@@ -1,5 +1,65 @@
+Today is September 7th 1:19pm
+
+I took a few days off from playing with clojure. I dug into some javascript
+testing. But I want to spend a little time on clojure today.
+
+There is an empty? function. This is cool reminds me of ruby methods
 
 
+We can check if a vector is empty by doing soething like this
+1. Empty?
+ex:  (empty? [:table :door :key])
+Return: false
+
+This of course will return false
+
+ex: (empty? [])
+Return: true
+This will return true because the vector is empty
+
+The cool thing is you can actually use this with maps and I think lists but lets
+try first.
+
+Yup you can do it with those check these examples out.
+
+ex: (empty? {})
+Return: true
+
+ex: (empty? '())
+Return true
+
+This is cool because it looks like you can use the empty? function with all
+the collection types
+
+So Living Clojure page just mentioned something called seq. Apparently under the
+hood empty is using it. The example was this
+
+(defn empty? [col1] (not (seq col1)))
+
+But what is seq. I understand its using a not so lets just look at this from
+what we understand right now.
+
+This method takes one argument the col1 argument. Which to me would mean
+collection. Then lets check out the expressions from the innermost expression. 
+
+(seq col1)
+
+I'm not quite sure what seq would mean... so lets just assume that's true (?)
+not really sure.
+
+Then the not would check the value of the inner expression.. which would negate
+whatever value was returned.
+
+so if we do
+
+(empty? [:3])
+
+Were technically doing 
+
+(not (seq [:3])
+
+This would return false... so seq [:3] must return true.. and the not would
+negate that, so we'd get false back... but anyway lets dig into what seq is.
 
 
 Today is September 2nd 12:00 am
