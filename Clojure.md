@@ -50,6 +50,7 @@ means we can use our own functions to run tests.
 Because I come from javascript filter comes to mind. For instance in
 javascript we could do something like this for an array.
 
+#Javascript (Its kinda similiar)
 
 ```javascript
 [1,2,3,4].filter( value => { return value % 2 !== 0; })
