@@ -51,9 +51,9 @@ Because I come from javascript filter comes to mind. For instance in
 javascript we could do something like this for an array.
 
 
-'''javascript
+```javascript
 [1,2,3,4].filter( value => { return value % 2 !== 0; })
-'''
+```
 
 Its slightly different because the filter only returns the items where this is
 true in a new array... and not returning a value but we could do that like so
@@ -64,9 +64,9 @@ much exactly what our clojure script is doing but were using our own lamdas
 
 It would look like this
 
-'''javascript
+```javascript
 [1 1 1].every(item => item % 2 !== 0);
-'''
+```
 
 This will return true, anyway using javascript always helps me understanding
 other concepts in other languages. Sorry for this digression it just helps me
@@ -77,9 +77,9 @@ Back to Clojure
 We can also write our own predictes (functions that return true or false in a
 logic test )
 
-'''clojure
+```clojure
 (defn isThisOdd? [x] (not= (rem [x] 2) 0))
-'''
+```
 
 I tried to get this to work, the method is created but when I pass a vector into
 it... i just get an error
@@ -120,9 +120,9 @@ There is also another function
 Another function does something slightly different, it returns the first logical
 true value of the predicate, and returns nil if there isn't a true value.
 
-'''Clojure
+```clojure
 (some #(> % 3) [1 2 3 4 5])
-'''
+```
 
 This will return true because well 4 > 3.
 
@@ -137,16 +137,16 @@ There is an empty? function. This is cool reminds me of ruby methods
 
 We can check if a vector is empty by doing soething like this
 1. Empty?
-'''Clojure
+```clojure
 (empty? [:table :door :key])
-'''
+```
 
 Return: false
 
 This of course will return false
-'''Clojure 
+```clojure
 (empty? [])
-'''
+```
 
 Return: true
 This will return true because the vector is empty
@@ -156,15 +156,15 @@ try first.
 
 Yup you can do it with those check these examples out.
 
-'''Clojure
+```clojure
 (empty? {})
-'''
+```
 
 Return: true
 
-'''Clojure
+```clojure
 (empty? '())
-'''
+```
 
 Return true
 
@@ -174,9 +174,9 @@ the collection types
 So Living Clojure page just mentioned something called seq. Apparently under the
 hood empty is using it. The example was this
 
-'''Clojure
+```clojure
 (defn empty? [col1] (not (seq col1)))
-'''
+```
 
 But what is seq. I understand its using a not so lets just look at this from
 what we understand right now.
@@ -184,9 +184,9 @@ what we understand right now.
 This method takes one argument the col1 argument. Which to me would mean
 collection. Then lets check out the expressions from the innermost expression. 
 
-'''Clojure
+```clojure
 (seq col1)
-'''
+```
 
 I'm not quite sure what seq would mean... so lets just assume that's true (?)
 not really sure.
@@ -196,15 +196,15 @@ whatever value was returned.
 
 so if we do
 
-'''Clojure
+```clojure
 (empty? [:3])
-'''
+```
 
 Were technically doing 
 
-'''Clojure
+```clojure
 (not (seq [:3])
-'''
+```
 
 This would return false... so seq [:3] must return true.. and the not would
 negate that, so we'd get false back... but anyway lets dig into what seq is.
@@ -251,25 +251,25 @@ I can't sleep... so i'm going through some closure stuff..
 Different types of collections in closure
 
 1. List
-'''Clojure
+```clojure
 '(:a :b :c)
-'''
+```
 
 This is a list with three keywords. (symbols in ruby  :) )
 special properties of a list...
 You can't access an index directly you have to do so using things like this
 
-'''Clojure
+```clojure
 (first '(:a :b :c))
-'''
+```
 
 That would return :a
 
 Or you can return b by doing this
 
-'''Clojure
+```clojure
 (first (rest '(:a :b :c)))
-'''
+```
 
 This will return :b... but wwhy
 
@@ -280,16 +280,16 @@ operation for the list :b :c... it will pull :b
 
 2. Vector 
 
-'''Clojure
+```clojure
 [:a :b :c]
-'''
+```
 
 This is basically what I think of as an array. You can grab values directly
 just like in an array... you just specify the index... 
 
-'''Clojure
+```clojure
 (nth [:a :b :c] 1)
-'''
+```
 
 This will return :b .. remember all  vectors are 0 based
 
@@ -297,9 +297,9 @@ You can also call first, last, and rest operations
 
 3. Maps
 
-'''Clojure
+```clojure
 {:a 'letter A' :b 'letter B' :c 'letter cd'}
-'''
+```
 
 This is a map... or hash in ruby or dictionary in python or object in javascript
 
@@ -310,22 +310,22 @@ In this case the key is a keyword and the value is a string
 You can get values by using the get operation like so
 
 
-'''Clojure
+```clojure
 (get {:a 'letter a' :b 'letter b' :c 'letter c'} :b)
-'''
+```
 
 Or you can use the key like so
 
-'''Clojure
+```clojure
 (:b {:a 'letter a' :b 'letter b' :c 'letter c'})
-'''
+```
 
 
 You can view all the keys by using the keys operation
 
-'''Clojure
+```clojure
 (keys {:a 'letter a' :b 'letter b' :c 'letter c'})
-'''
+```
 
 
 
@@ -345,19 +345,19 @@ of the language syntax. Ran into something interesting.
 So there are methods you can apply to a string like len()... but that's
 interesting is you can apply that to other data types... you use it like so
 
-'''Python
+```python
 len("charlie")
-'''
+```
 
 It would output the length
 
 You also have methods like upper and lower.. .these belong to the String class.
 You would call them like so
 
-'''Python
+```python
 "Delta".upper()
 "Echo".lower()
-'''
+```
 
 
 ###String Formatting with %
@@ -366,12 +366,12 @@ The % operate after a string is used to combine a string with variables. The %
 operator will replace a %s in the string with the string variable that comes
 after it... FOr example
 
-'''Python
+```python
 string_1 = "Camelot"
 string_2 = "place"
 
 print "Let's not go to %s. 'Tis a silly %s." % (string_1, string_2)
-'''
+```
 
 So this string would print as follows
 
