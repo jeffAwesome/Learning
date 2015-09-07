@@ -1,7 +1,7 @@
 # Living Clojure
 
-I am following along with the examples in (Living Clojure by Carein
-Meier)[http://smile.amazon.com/Living-Clojure-Carin-Meier/dp/1491909048/ref=sr_1_1?ie=UTF8&qid=1441656978&sr=8-1&keywords=living+clojure].
+I am following along with the examples in [Living Clojure by Carein
+Meier](http://smile.amazon.com/Living-Clojure-Carin-Meier/dp/1491909048/ref=sr_1_1?ie=UTF8&qid=1441656978&sr=8-1&keywords=living+clojure).
 
 I haven't gotten through a ton but so far this book has been great. I will post
 a review when I finish it.
