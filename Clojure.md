@@ -14,7 +14,7 @@ mentions this
 "Sets are collections of unique values."
 
 
-'''Clojure
+'''clojure
 ({:a :b :c :d})
 '''
 
@@ -30,7 +30,7 @@ takes two arguments. It takes a predicate(?) to test and the collection.
 
 So it looks like this
 
-'''Clojure
+'''clojure
 Ex: (every? odd? [1 1 1])
 '''
 Return: true
@@ -50,7 +50,7 @@ Because I come from javascript filter comes to mind. For instance in
 javascript we could do something like this for an array.
 
 
-'''Javascript
+'''javascript
 [1,2,3,4].filter( value => { return value % 2 !== 0; })
 '''
 
@@ -63,7 +63,7 @@ much exactly what our clojure script is doing but were using our own lamdas
 
 It would look like this
 
-'''Javascript
+'''javascript
 [1 1 1].every(item => item % 2 !== 0);
 '''
 
@@ -76,8 +76,9 @@ Back to Clojure
 We can also write our own predictes (functions that return true or false in a
 logic test )
 
-'''Clojure
+'''clojure
 (defn isThisOdd? [x] (not= (rem [x] 2) 0))
+'''
 
 I tried to get this to work, the method is created but when I pass a vector into
 it... i just get an error
@@ -98,7 +99,7 @@ makes sense to me.) function.
 # not-any?
 Another one checking for false is not-any?. It can be used like so
 
-'''Clojure
+'''clojure
 (not-any? #(= % :drinkme) [:drinkme :poison])
 '''
 
