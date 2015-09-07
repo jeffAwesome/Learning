@@ -1,4 +1,4 @@
-Today is September 7th 1:19pm
+September 7th 1:19pm
 
 I took a few days off from playing with clojure. I dug into some javascript
 testing. But I want to spend a little time on clojure today.
@@ -61,6 +61,40 @@ Were technically doing
 This would return false... so seq [:3] must return true.. and the not would
 negate that, so we'd get false back... but anyway lets dig into what seq is.
 
+
+Abstractions and seq
+In clojure there are the collection and sequence abstractions. Collections are a
+collection of elements lik in a vector, a map, or a list. These all share
+immutable data structure. The collections abstractions share methods like count,
+conj, and seq. (ah there is that word again).
+
+So what is seq. Apparently the seq function turns the collection (map, vector,
+list) into a sequence. A sequence is a walkable, list abstraction for collection
+data structure. Seq (short for sequences) are also persistent and immutable and
+provide shared functions like first, rest, and cons.
+
+
+So the seq function returns a sequence on the collection or returns nil if it is
+empty.
+
+So this does actually explain why (seq [:3]) would return truthy since i'm
+assuming anything not nil in this instance would not be falsy.
+
+
+SideNote:
+
+I was reading through more of Clojure Living and so I was curious about
+something. (seq []) returns a nil, but (seq [:1 :2 :3]) returns the sequence not
+true. Well that's all solved by using the not function. In Clojure Living it
+says this.
+
+".. a not of some other value then a logical false, like a string or an integer
+will return false."
+
+So for us that's whats happening... were running not on a sequence which returns
+false.
+
+whoa that's interesting and a lot to digest but it does make sense
 
 Today is September 2nd 12:00 am
 
