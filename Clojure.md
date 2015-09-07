@@ -1,4 +1,4 @@
-September 7th 2:38pm
+##September 7th 2:38pm
 
 I should probably move faster through this book. I'm still on chapter 2 :). I
 think my biggest issue is I like to kind of know the deeper, but I also think
@@ -9,15 +9,19 @@ Oh and quick note... I forgot about these, but where I'm at in the book they
 mention sets. Well I completely forgot what a set was... on the clojure site it
 mentions this
 
-http://clojure.org/data_structures#Data Structures-Sets
+[Data Structures - Sets] (http://clojure.org/data_structures#Data Structures-Sets)
+
 "Sets are collections of unique values."
 
+
+'<code>'
 Ex: ({:a :b :c :d})
+'</code>'
 Notes this map is using unique keywords in each index.
 
 
 
-September 7th 1:53pm
+##September 7th 1:53pm
 Looking at collection tests. Again I am working through the Living Clojure book. 
 
 One of the first examples I am given is the every? function. It looks like it
@@ -25,8 +29,10 @@ takes two arguments. It takes a predicate(?) to test and the collection.
 
 So it looks like this
 
+'<code>'
 Ex: (every? odd? [1 1 1])
 Return: true
+'</code>'
 
 This checks each value in the vector. If the predicate(?) test returns true then
 the function returns true. If any of the items in the collection don't return
@@ -42,7 +48,10 @@ means we can use our own functions to run tests.
 Because I come from javascript filter comes to mind. For instance in
 javascript we could do something like this for an array.
 
+
+'<code>'
 [1,2,3,4].filter( value => { return value % 2 !== 0; })
+'</code>'
 
 Its slightly different because the filter only returns the items where this is
 true in a new array... and not returning a value but we could do that like so
@@ -53,7 +62,9 @@ much exactly what our clojure script is doing but were using our own lamdas
 
 It would look like this
 
+'<code>'
 [1 1 1].every(item => item % 2 !== 0);
+'</code>'
 
 This will return true, anyway using javascript always helps me understanding
 other concepts in other languages. Sorry for this digression it just helps me
