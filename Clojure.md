@@ -14,9 +14,9 @@ mentions this
 "Sets are collections of unique values."
 
 
-'''clojure
+```clojure
 ({:a :b :c :d})
-'''
+```
 
 Notes this map is using unique keywords in each index.
 
@@ -30,9 +30,10 @@ takes two arguments. It takes a predicate(?) to test and the collection.
 
 So it looks like this
 
-'''clojure
+```clojure
 Ex: (every? odd? [1 1 1])
-'''
+```
+
 Return: true
 
 This checks each value in the vector. If the predicate(?) test returns true then
@@ -99,9 +100,9 @@ makes sense to me.) function.
 # not-any?
 Another one checking for false is not-any?. It can be used like so
 
-'''clojure
+```clojure
 (not-any? #(= % :drinkme) [:drinkme :poison])
-'''
+```
 
 Returns: false
 
