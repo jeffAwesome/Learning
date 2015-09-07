@@ -232,12 +232,13 @@ assuming anything not nil in this instance would not be falsy.
 
 
 ##SideNote:
-> I was reading through more of Clojure Living and so I was curious about
+
+I was reading through more of Clojure Living and so I was curious about
 something. (seq []) returns a nil, but (seq [:1 :2 :3]) returns the sequence not
 true. Well that's all solved by using the not function. In Clojure Living it
 says this.
 
-".. a not of some other value then a logical false, like a string or an integer
+> ".. a not of some other value then a logical false, like a string or an integer
 will return false."
 
 So for us that's whats happening... were running not on a sequence which returns
